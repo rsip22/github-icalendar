@@ -7,8 +7,8 @@ iCalendar feed of VTODO items.
 [Official repository](https://github.com/dpocock/github-icalendar/)
 
 Github iCalendar is written in Python and uses the
-[Flask](http://flask.pocoo.org/) micro web application framework. 
-If you'd prefer a PHP based solution, a clone of this script written in 
+[Flask](http://flask.pocoo.org/) micro web application framework.
+If you'd prefer a PHP based solution, a clone of this script written in
 PHP is available [here](https://github.com/gpolitis/php-github-icalendar/).
 
 Would you like to see native iCalendar support in Github?
@@ -29,6 +29,10 @@ Install the dependencies on your system, on a Debian or Ubuntu system you
 may execute a command like this to get everything you need:
 
     sudo apt-get install python-yaml python-icalendar python-flask python-pygithub
+
+If you want to use a virtualenv (Python 2.7), these are the packages:
+
+    pip install PyYAML icalendar flask pygithub
 
 Create an API token on GitHub [using these instructions](https://help.github.com/articles/creating-an-access-token-for-command-line-use/)
 
@@ -83,4 +87,3 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
