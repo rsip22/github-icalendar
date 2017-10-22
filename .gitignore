@@ -1,0 +1,4 @@
+myvenv
+dev-config.cfg
+*.pyc
+__pycache__

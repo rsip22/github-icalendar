@@ -1,0 +1,10 @@
+PyYAML
+icalendar
+flask
+pygithub
+pep8
+flake8
+jedi
+pytest
+pudb
+vcrpy

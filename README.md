@@ -34,6 +34,10 @@ If you want to use a virtualenv (Python 2.7), these are the packages:
 
     pip install PyYAML icalendar flask pygithub
 
+To develop, you may simply install the dependencies specified in the requirements file:
+
+    pip install -r requirements-dev.txt
+
 Create an API token on GitHub [using these instructions](https://help.github.com/articles/creating-an-access-token-for-command-line-use/)
 
 Create a configuration file, for example:
@@ -56,14 +60,37 @@ be ignored:
     - repository: your-user-name/your-project
     - repository: your-user-name/another-project
 
+If you want to get only issues with a chosen label on your feed, list the labels you want in the configuration file, like this:
+
+    labels:
+    - label: bug
+    - label: enhancement
+
+This configuration gets the listed labels from `all` the repositories, but it can be combined with the repository configuration, if you want issues with specific labels from specific repositories.
+
+    api_token: 6b36b3d7579d06c9f8e88bc6fb33864e4765e5fac4a3c2fd1bc33aad
+    bind_address: ::0
+    bind_port: 5000
+    filter: all
+    repositories:
+    - repository: your-user-name/your-project
+    - repository: your-user-name/another-project
+    labels:
+    - label: bug
+    - label: enhancement
+
 The `filter` parameter has the same meaning as the `filter` parameter
 in the [Github issues API](https://developer.github.com/v3/issues/)
 although if it is not specified, Github-iCalendar uses `all` as the
 default.
 
-Start the process:
+You can run the application directly from the command line:
 
     $ ./github_icalendar/main.py github-ics.cfg
+
+Or start it as a web server, passing the argument:
+
+    $ ./github_icalendar/main.py github-ics.cfg --web
 
 In your iCalendar client (such as Mozilla Thunderbird with the
 Mozilla Lightning plugin) you just have to add a new remote calendar
