@@ -38,6 +38,10 @@ To develop, you may simply install the dependencies specified in the requirement
 
     pip install -r requirements-dev.txt
 
+You might need to install a local project in "editable" mode on your virtualenv to run the tests:
+
+    pip install -e .
+
 Create an API token on GitHub [using these instructions](https://help.github.com/articles/creating-an-access-token-for-command-line-use/)
 
 Create a configuration file, for example:
